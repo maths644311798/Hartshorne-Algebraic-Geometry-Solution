@@ -1,0 +1,77 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+\usepackage[scr=boondox,cal=esstix]{mathalpha}
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Hartshorne Algebraic Geometry Solution}
+\author{Functor}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This is a collection of solutions to the exercises of Hartshorne's Algebraic Geometry \cite{Hartshorne1977AlgebraicG}. There are already many good solutions like Joe Cutrone and Nick Marshburn's, so this file should be regarded as a complement. That is, I only write solutions to the exercises that Joe Cutrone and Nick Marshburn's do not contain, or the solutions that are different from theirs.
+
+EGA always refer to \cite{EGA}.
+\end{abstract}
+
+\section{Varieties}
+
+\section{Schemes}
+
+\section{Cohomology}
+\textbf{Exercise 4.11} 
+\begin{proof}
+This can be proved imitating the proof of (4.5). For convenience, equip $X$ with a constant sheaf $O_X = \mathbb{Z}$ so $(X, O_X)$ is a ringed space. Recall that abelian groups are $\mathbb{Z}$-modules.
+
+(2.2) implies that $\mathscr{F}$ can be embedded into an injective sheaf $\mathscr{G}$. Denote the cokernel by $\mathscr{R}$, then we have an exact sequence of sheaves
+\[
+0 \longrightarrow \mathscr{F} \longrightarrow \mathscr{G} \longrightarrow \mathscr{R} \longrightarrow 0
+\]
+Since for open sets like $V = U_{i_0} \cap \dots \cap  U_{i_p}$, $H^1(V, \mathscr{F}|_V) = 0$, we deduce that
+\[
+0 \longrightarrow \mathscr{F}(V) \longrightarrow \mathscr{G}(V) \longrightarrow \mathscr{R}(V) \longrightarrow 0
+\]
+is exact. Taking products, we find the $\check{\mathrm{C}}$ech complexes
+\[
+0 \longrightarrow C^.(\mathcal{U}, \mathscr{F}) \longrightarrow C^.(\mathcal{U}, \mathscr{G}) \longrightarrow C^.(\mathcal{U}, \mathscr{R}) \longrightarrow 0
+\]
+is exact. By (2.4), $\mathscr{G}$ is flasque. So (4.3) implies its $\check{\mathrm{C}}$ech cohomology vanishes for $p > 0$. So we have an exact sequence
+\[
+0 \longrightarrow \check{H}^0(\mathcal{U}, \mathscr{F}) \longrightarrow \check{H}^0(\mathcal{U}, \mathscr{G}) \longrightarrow \check{H}^0(\mathcal{U}, \mathscr{R}) \longrightarrow \check{H}^1(\mathcal{U}, \mathscr{F})  \longrightarrow 0
+\]
+and isomorphisms
+\[
+\check{H}^p(\mathcal{U}, \mathscr{R}) \xrightarrow{\sim} \check{H}^{p+1}(\mathcal{U}, \mathscr{F})
+\]
+for $p \geq 1$. Using (2.5) and (4.1), we conclude
+\[
+\check{H}^1(\mathcal{U}, \mathscr{F}) \xrightarrow{\sim} H^{1}(X, \mathscr{F})
+\]
+is an isomorphism.
+
+The long exact sequence for cohomology impliest that $\mathscr{R}$ satisfies $\forall k > 0, H^k(V, \mathscr{R}|_V) = 0$, like $\mathscr{F}$. By induction on $p$, $\check{H}^p(\mathcal{U}, \mathscr{F}) \xrightarrow{\sim} H^{p}(X, \mathscr{F})$ is an isomorphism for all $p > 0$.
+
+Obviously, (4.5) is a corollary of this result.
+\end{proof}
+
+
+\bibliographystyle{alpha}
+\bibliography{sample}
+
+\end{document}
